@@ -48,7 +48,7 @@ import Control.Monad.Reader.Class
 import Control.Monad.State.Class
 import Control.Monad.Error.Class
 
-import Data.Monoid (Monoid(mappend, mempty))
+import Data.Monoid ()
 import qualified Data.Foldable as F
 import qualified Data.Traversable as T
 
@@ -103,7 +103,7 @@ logic f = LogicT $ \k -> Identity .
 -------------------------------------------------------------------------
 -- | Extracts the first result from a Logic computation.
 observe :: Logic a -> a
-observe = runIdentity . observeT 
+observe = runIdentity . observeT
 
 -------------------------------------------------------------------------
 -- | Extracts all results from a Logic computation.

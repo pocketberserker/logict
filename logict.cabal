@@ -15,7 +15,7 @@ copyright:              Copyright (c) 2007-2014, Dan Doel,
 author:                 Dan Doel
 maintainer:             dan.doel@gmail.com
 homepage:               http://code.haskell.org/~dolio/
-cabal-version:          >= 1.9.2
+cabal-version:          >= 1.22
 tested-with:            GHC
 build-type:             Simple
 
@@ -24,8 +24,8 @@ source-repository head
   location: http://hub.darcs.net/dolio/logict
 
 library
+  Default-Language:     Haskell2010
   build-depends:          base >=2 && < 5, mtl>=2 && <2.3
-
   exposed-modules:        Control.Monad.Logic,
                           Control.Monad.Logic.Class
   extensions:             MultiParamTypeClasses,
@@ -33,3 +33,16 @@ library
                           Rank2Types,
                           FlexibleInstances
   ghc-options:            -O2 -Wall
+
+test-suite spec
+  Type:                 exitcode-stdio-1.0
+  Default-Language:     Haskell2010
+  Hs-Source-Dirs:       test
+  Ghc-Options:          -Wall
+  Main-Is:              Spec.hs
+  Other-Modules:        LogicSpec
+  Build-Depends:        base
+                      , mtl
+                      , hspec >= 2.1
+                      , QuickCheck >= 2.8
+                      , logict

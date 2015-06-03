@@ -24,7 +24,7 @@ import qualified Control.Monad.State.Strict as StrictST
 
 import Control.Monad.Reader
 
-import Data.Monoid
+import Data.Monoid ()
 import qualified Control.Monad.Writer.Lazy as LazyWT
 import qualified Control.Monad.Writer.Strict as StrictWT
 
